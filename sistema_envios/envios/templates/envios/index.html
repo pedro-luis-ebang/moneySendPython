@@ -1,0 +1,46 @@
+{% extends 'envios/base.html' %}
+{% block content %}
+<h1>Envios APA money</h1>
+<div class="mb-3">
+    <a href="{% url 'registrar_usuario' %}" class="btn btn-primary">Registrar Nuevo</a>
+    <a href="{% url 'enviar_dinero' %}" class="btn btn-secondary">Envio</a>
+    <a href="{% url 'depositar_dinero' %}" class="btn btn-success">Depositar</a>
+    <a href="{% url 'retirar_dinero' %}" class="btn btn-warning">Retirar</a>
+    <a href="{% url 'pagar_servicio' %}" class="btn btn-info">Pagar Servicio</a>
+    <a href="{% url 'ver_grafico' %}" class="btn btn-dark">Gráficas</a>
+</div>
+
+<h2>Usuarios APA</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Saldo</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for usuario in usuarios %}
+        <tr>
+            <td>{{ usuario.id }}</td>
+            <td>{{ usuario.nombre }}</td>
+            <td>{{ usuario.saldo }}CFA</td>
+            <td>
+                <a href="{% url 'ver_historial' usuario.id %}" class="btn btn-sm btn-info">TRANSACCIONES</a>
+                <!-- Formulario para eliminar usuario -->
+            <form action="{% url 'eliminar_usuario' usuario.id %}" method="POST" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-sm btn-danger">ELIMINAR</button>
+            </form>
+            </td>
+
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="3">No hay usuarios registrados.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'envios/base.html' %}
+{% block content %}
+<h2>Historial de Transacciones de {{ usuario.nombre }}</h2>
+<ul class="list-group">
+    {% for transaccion in transacciones %}
+    <li class="list-group-item">
+        <strong>{{ transaccion.fecha|date:"d/m/Y H:i" }}</strong>: {{ transaccion.descripcion }} ({{ transaccion.tipo }}) - ${{ transaccion.monto }}
+    </li>
+    {% empty %}
+    <li class="list-group-item">No hay transacciones registradas.</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'index' %}" class="btn btn-secondary mt-3">Volver</a>
+{% endblock %}

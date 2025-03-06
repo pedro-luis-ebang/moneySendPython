@@ -1,0 +1,33 @@
+{% extends 'envios/base.html' %}
+{% block extra_head %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+{% block content %}
+<h2>Gráfico de Saldos de Usuarios APA</h2>
+<canvas id="saldoChart" width="400" height="200"></canvas>
+<script>
+fetch("{% url 'datos_grafico' %}")
+    .then(response => response.json())
+    .then(data => {
+        const ctx = document.getElementById('saldoChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: data.usuarios,
+                datasets: [{
+                    label: 'Saldo (CFA)',
+                    data: data.saldos,
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)'
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}

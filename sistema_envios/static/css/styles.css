@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos globales */
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  color: #e0e0e0;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+/* Contenedor principal con efecto glass */
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+/* Títulos */
+h1, h2, h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #00d1b2; /* Acento neón */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Formularios */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form p {
+  font-size: 1rem;
+  color: #cfcfcf;
+}
+
+/* Campos de formulario */
+input, select, textarea {
+  padding: 1rem;
+  font-size: 1rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #e0e0e0;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border: 2px solid #00d1b2;
+  box-shadow: 0 0 10px rgba(0, 209, 178, 0.5);
+}
+
+/* Botones – estilo único y sorprendente */
+button, .btn {
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Botón primario: explosión de rosa neón */
+.btn-primary {
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(255, 65, 108, 0.4);
+}
+.btn-primary:hover {
+  background: linear-gradient(45deg, #ff4b2b, #ff416c);
+  transform: translateY(-3px);
+}
+
+/* Botón secundario: combinación ciber-azul */
+.btn-secondary {
+  background: linear-gradient(45deg, #1e3c72, #2a5298);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(30, 60, 114, 0.4);
+}
+.btn-secondary:hover {
+  background: linear-gradient(45deg, #2a5298, #1e3c72);
+  transform: translateY(-3px);
+}
+
+/* Botón éxito: verde futurista */
+.btn-success {
+  background: linear-gradient(45deg, #00b09b, #96c93d);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 176, 155, 0.4);
+}
+.btn-success:hover {
+  background: linear-gradient(45deg, #96c93d, #00b09b);
+  transform: translateY(-3px);
+}
+
+/* Botón advertencia: degradado dorado */
+.btn-warning {
+  background: linear-gradient(45deg, #f7971e, #ffd200);
+  color: #333;
+  box-shadow: 0 4px 10px rgba(247, 151, 30, 0.4);
+}
+.btn-warning:hover {
+  background: linear-gradient(45deg, #ffd200, #f7971e);
+  transform: translateY(-3px);
+}
+
+/* Botón info: turquesa eléctrico */
+.btn-info {
+  background: linear-gradient(45deg, #11998e, #38ef7d);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(17, 153, 142, 0.4);
+}
+.btn-info:hover {
+  background: linear-gradient(45deg, #38ef7d, #11998e);
+  transform: translateY(-3px);
+}
+
+/* Botón oscuro: grises futuristas */
+.btn-dark {
+  background: linear-gradient(45deg, #232526, #414345);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(35, 37, 38, 0.4);
+}
+.btn-dark:hover {
+  background: linear-gradient(45deg, #414345, #232526);
+  transform: translateY(-3px);
+}
+
+/* Estilos para tablas con diseño futurista */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+table th, table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.95rem;
+}
+
+table th {
+  background: rgba(0, 209, 178, 0.2);
+  color: #00d1b2;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+table tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.03);
+  
+}
+table tbody tr{
+    color: whitesmoke;
+}
+table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
